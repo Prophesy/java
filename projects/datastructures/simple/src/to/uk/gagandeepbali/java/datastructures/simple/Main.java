@@ -13,6 +13,11 @@ public class Main {
 	
 	private void performTask () {
 		stack = new ArrayStack ( 5 );
+		stack.push ( 'a' );
+		stack.push ( 'b' );
+		stack.display ();
+		stack.pop ();
+		stack.display ();
 	}
 	
 	public static void main ( String [] args ) {

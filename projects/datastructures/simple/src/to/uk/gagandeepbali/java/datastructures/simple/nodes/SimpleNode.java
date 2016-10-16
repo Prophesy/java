@@ -19,6 +19,6 @@ public class SimpleNode extends Node {
 	
 	@Override
 	public String toString () {
-		return ( String.format ( "[ SimpleNode: {0} ]", super.toString () ) );
+		return ( String.format ( "[ SimpleNode: {1} ]", data ) );
 	}
 } 

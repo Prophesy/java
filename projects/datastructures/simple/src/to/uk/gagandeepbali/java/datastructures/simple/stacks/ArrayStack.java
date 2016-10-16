@@ -4,7 +4,10 @@ package to.uk.gagandeepbali.java.datastructures.simple.stacks;
  * Author: Gagandeep Bali
  * Date: 15th Oct., 2016.
  */
+import java.util.Arrays;
+ 
 import to.uk.gagandeepbali.java.datastructures.simple.nodes.*;
+import to.uk.gagandeepbali.java.datastructures.simple.utility.*;
  
 public class ArrayStack implements IStack {
 	
@@ -43,12 +46,12 @@ public class ArrayStack implements IStack {
 	@Override
 	public char pop () {
 		Node node = null;
-		if ( !isEmptyStack ) {
+		if ( !isEmptyStack () ) {
 			node = stack [ top ];
 			--top;
 			return node.getData ();
 		}
-		return node;
+		return '\0';
 	}
 	
 	@Override
@@ -58,6 +61,13 @@ public class ArrayStack implements IStack {
 	
 	@Override
 	public void display () {
-		
+		System.out.println ( Constant.BORDER );
+		System.out.println ( "STACK" );
+		System.out.println ( Constant.BORDER );
+		for ( int i = 0; i <= top; ++i ) {
+			System.out.print ( stack [ i ] + " " );
+		}
+		// Arrays.toString ( stack );
+		System.out.println ( Constant.NEWLINE + Constant.BORDER );
 	}
 } 

@@ -13,6 +13,6 @@ public abstract class Node {
 	
 	@Override
 	public String toString () {
-		return ( String.format ( "[ Node: Data = {0} ]", data ) );
+		return ( String.format ( "{0}", data ) );
 	}
 } 
