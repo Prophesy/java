@@ -6,12 +6,10 @@ package to.uk.gagandeepbali.java.datastructures.simple.stacks;
  */
 import to.uk.gagandeepbali.java.datastructures.simple.nodes.*;
 
-public interface IStack {
-
-    public boolean isEmptyStack ();
-    public boolean isFullStack ();
-    public boolean push ( char data );
-    public char pop ();
-    public int size ();
-    public void display ();
+public interface IStack < T > {
+	
+	void push ( T data );
+    Node < T > pop ();
+    int size ();
+    void display ();
 }

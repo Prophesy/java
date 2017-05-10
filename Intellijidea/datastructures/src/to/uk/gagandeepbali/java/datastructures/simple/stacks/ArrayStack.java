@@ -4,54 +4,53 @@ package to.uk.gagandeepbali.java.datastructures.simple.stacks;
  * Author: Gagandeep Bali
  * Date: 15th Oct., 2016.
  */
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import to.uk.gagandeepbali.java.datastructures.simple.nodes.*;
 import to.uk.gagandeepbali.java.datastructures.simple.utility.*;
 
-public class ArrayStack implements IStack {
+public class ArrayStack < T > implements IStack < T > {
 
-    private Node [] stack;
-    private int capacity;
+    private final List < Node < T > > stack;
+    private final int capacity;
     private int top;
 
     public ArrayStack ( int capacity ) {
         this.capacity = capacity;
-        stack = new SimpleNode [ capacity ];
+        stack = new ArrayList < Node < T > > ( capacity );
         top = -1;
     }
 
-    @Override
-    public boolean isEmptyStack () {
+    private boolean isEmptyStack () {
         return ( top == -1 );
     }
 
-    @Override
-    public boolean isFullStack () {
+    private boolean isFullStack () {
         return ( top == ( capacity - 1 ) );
     }
 
     @Override
-    public boolean push ( char data ) {
+    public void push ( T data ) {
         if ( !isFullStack () ) {
-            Node node = new SimpleNode ();
+            Node < T > node = new SimpleNode < T > ();
             node.setData ( data );
             ++top;
-            stack [ top ] = node;
-            return true;
+            stack.add ( top, node );
+        } else {
+	        System.out.println ( "STACK is Full\n" );
         }
-        return false;
     }
 
     @Override
-    public char pop () {
-        Node node = null;
+    public Node < T > pop () {
+        Node < T > node;
         if ( !isEmptyStack () ) {
-            node = stack [ top ];
+            node = stack.get ( top );
             --top;
-            return node.getData ();
+            return node;
         }
-        return '\0';
+        return null;
     }
 
     @Override
@@ -65,7 +64,7 @@ public class ArrayStack implements IStack {
         System.out.println ( "STACK" );
         System.out.println ( Constant.BORDER );
         for ( int i = 0; i <= top; ++i ) {
-            System.out.print ( stack [ i ] + " " );
+            System.out.print ( stack.get ( i ) + " " );
         }
         // Arrays.toString ( stack );
         System.out.println ( Constant.NEWLINE + Constant.BORDER );

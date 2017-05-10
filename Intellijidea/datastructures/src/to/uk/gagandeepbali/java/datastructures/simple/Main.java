@@ -7,16 +7,17 @@ package to.uk.gagandeepbali.java.datastructures.simple;
 import to.uk.gagandeepbali.java.datastructures.simple.stacks.IStack;
 import to.uk.gagandeepbali.java.datastructures.simple.stacks.ArrayStack;
 
-public class Main {
-
-    private IStack stack;
+class Main {
 
     private void performTask () {
-        stack = new ArrayStack ( 5 );
+        IStack < Character > stack = new ArrayStack < Character > ( 5 );
         stack.push ( 'a' );
+        System.out.println ( "SIZE: " + stack.size () );
         stack.push ( 'b' );
+        System.out.println ( "SIZE: " + stack.size () );
         stack.display ();
-        stack.pop ();
+        System.out.println ( "POP: " + stack.pop () );
+        System.out.println ( "SIZE: " + stack.size () );
         stack.display ();
     }
 

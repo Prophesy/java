@@ -5,15 +5,15 @@ package to.uk.gagandeepbali.java.datastructures.simple.nodes;
  * Author: Gagandeep Bali
  * Date: 15th Oct., 2016.
  */
-public class SimpleNode extends Node {
+public class SimpleNode < T > extends Node < T > {
 
     @Override
-    public char getData () {
+    public T getData () {
         return data;
     }
 
     @Override
-    public void setData ( char data ) {
+    public void setData ( T data ) {
         this.data = data;
     }
 

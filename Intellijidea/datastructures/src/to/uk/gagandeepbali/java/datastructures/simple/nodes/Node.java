@@ -4,12 +4,16 @@ package to.uk.gagandeepbali.java.datastructures.simple.nodes;
  * Author: Gagandeep Bali
  * Date: 15th Oct., 2016
  */
-public abstract class Node {
+public abstract class Node < T > {
 
-    protected char data;
+    /**
+     * T represents the type of data in Node.
+     * Access of T is Package Private ( default ).
+     */
+    T data;
 
-    public abstract char getData ();
-    public abstract void setData ( char data );
+    public abstract T getData ();
+    public abstract void setData ( T data );
 
     @Override
     public String toString () {
